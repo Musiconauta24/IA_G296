@@ -42,7 +42,7 @@ git init
 git add .
 git commit -m "Nombre"
 git config --global user.email "fabianpersa24@gmail.com"
-git config --lobal user.name "Fabián DJ Pérez"
+git config --global user.name "Fabián DJ Pérez"
 git remote add origin https://github.com/Musiconauta24/IA_G296.git
 git push -u origin main
 ````
