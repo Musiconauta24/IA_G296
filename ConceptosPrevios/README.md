@@ -43,6 +43,12 @@ git add .
 git commit -m "Nombre"
 git config --global user.email "fabianpersa24@gmail.com"
 git config --global user.name "Fabián DJ Pérez"
+PS D:\Trabajos de la U\Curso IA Mintic\IA_G296> git branch -M main
 git remote add origin https://github.com/Musiconauta24/IA_G296.git
 git push -u origin main
+````
+
+Crar Archivo de requerimientos:
+````
+pip freeze > requirements.txt
 ````
