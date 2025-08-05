@@ -14,9 +14,13 @@ Creador de la carpeta env
 ````
 python -m venv env
 ````
-Activador
+Activador del entorno virtual
 ````
 env\scripts\activate
+````
+Desactivacor del entorno virtual
+````
+deactivate
 ````
 Si no se activa ejecutre el comando en PowerShell como administrador:
 ````
@@ -30,6 +34,10 @@ S
 | DataFrame | Se corresponde con una tabla de 2 dimensiones |
 | Palel     | Similar a un diccionario de DataFrame         |
 
+Ejecutar un archivo de panda al estar en la carpeta que lo contiene
+````
+python nombrearchivo.py
+````
 alt + Shift + F (Formatear Hoja)
 
 # Creación de Objeto Serie
@@ -47,8 +55,15 @@ PS D:\Trabajos de la U\Curso IA Mintic\IA_G296> git branch -M main
 git remote add origin https://github.com/Musiconauta24/IA_G296.git
 git push -u origin main
 ````
-
+Clonar Repositorio GitHub
+````
+git clone https://github.com/Musiconauta24/IA_G296.git
+````
 Crar Archivo de requerimientos:
 ````
 pip freeze > requirements.txt
+````
+Recuperar requerimientos de otro archivo
+````
+pip install -r requirements.txt
 ````
