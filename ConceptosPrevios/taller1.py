@@ -38,36 +38,47 @@ print (f"\n 2:\n a){ pd.DataFrame(
 )}")
 
 print (f"\n b) { (
-    df["promedio"].iloc[1]
+    df.iloc[1]["promedio"]
 )}")
 
 print (f"\n c) { (
-    df["promedio"].loc["Carlos"]
+    df.loc["Carlos"]["promedio"]
 )}")
- 
+
+print (f"\n d) { (
+    df.query("index == 'Carlos'")["promedio"]
+)}")
 
 #3. Filtra a los estudiantes con promedio mayor o igual a 4.0
  
-print (f"\n 3:\n{(
-    df["promedio"]>=4.0
+print (f"\n 3:\n a)\n{(
+    df["promedio"] >= 4.0
 )}")
- 
+
+print (f"\n b)\n{(
+    df.loc[df['promedio'] >= 4.0]
+)}")
+
+print (f"\n c)\n{(
+    df.query("promedio >= 4.0")
+)}")
 
 #Pregunta: ¿Cuántos estudiantes tienen un buen promedio?
 
 bprom = df.query("promedio >= 4")
 bprom = len(bprom)
-print (f"\n 3.1:\n{(
+print (f"\n 3.1:\n {(
     bprom
 )}")
 
 #4. Calcula operaciones estadísticas:
 
- 
+estadisticas = df.describe()
+print (f"\n 4:\n{estadisticas}")
 
 #5. Agrega una nueva columna que indique si el estudiante es mayor de edad
 
-adultos = (df["edad"]>17)
+adultos = (df["edad"] > 17)
 df2 = df.copy()
 df2["adulto"] = adultos
 print (f"\n 5:\n{(
@@ -75,12 +86,11 @@ print (f"\n 5:\n{(
 )}")
 
 #6. Agrega una columna con el año de nacimiento (suponiendo que estamos en 2025)
- 
-df3 = df.copy()
-año = 2025 - df3["edad"]
-df3["Nacimiento"] = año
+
+año = 2025 - df2["edad"]
+df2["Nacimiento"] = año
 print (f"\n 6:\n{(
-    df3
+    df2
 )}")
 
 #7. Visualiza los promedios de los estudiantes en un gráfico
@@ -93,16 +103,16 @@ plt.show()
 #8. Filtra a los estudiantes con altura entre 165 y 175 cm
  
 print (f"\n 8:\n{(
-    df.query("altura >= 165 and altura <= 175")
+    df2.query("altura >= 165 and altura <= 175")
 )}")
 
 
 #9. Copia el DataFrame y elimina la columna "peso"
  
-df4 = df.copy()
-del df4["peso"]
+df2 = df.copy()
+del df2["peso"]
 print (f"\n 9:\n{(
-    df4
+    df2
 )}")
 
 #10. Crea un nuevo DataFrame con solo 3 columnas: nombre, edad y año de nacimiento
